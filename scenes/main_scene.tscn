@@ -4,11 +4,31 @@
 [ext_resource type="PackedScene" uid="uid://cdhmypurlnbyw" path="res://scenes/title_screen.tscn" id="2_pw63i"]
 [ext_resource type="Script" uid="uid://bb0632ib7j5et" path="res://scenes/popup_manager.gd" id="3_7ykc4"]
 [ext_resource type="PackedScene" uid="uid://b8h3g437j73fb" path="res://scenes/battle_scene.tscn" id="3_pu3yx"]
+[ext_resource type="Shader" uid="uid://dtahmryw2jjok" path="res://assets/shaders/crt.gdshader" id="4_18nlu"]
 [ext_resource type="Script" uid="uid://da6d78s8867ns" path="res://scenes/dialog_manager.gd" id="4_gubc5"]
 [ext_resource type="Resource" uid="uid://vq2l5fag5wbd" path="res://resources/dialog/1.tres" id="5_c16ls"]
 [ext_resource type="PackedScene" uid="uid://b0uptuihe2xlr" path="res://scenes/ui/dialog/dialog_options.tscn" id="5_rt2n2"]
 
 [sub_resource type="Environment" id="Environment_und3l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c1pb6"]
+shader = ExtResource("4_18nlu")
+shader_parameter/wobble_speed = 0.1
+shader_parameter/wobble_frequency = 0.3
+shader_parameter/wobble_strength = 0.5
+shader_parameter/fisheye = 0.25
+shader_parameter/brighten = 0.65
+shader_parameter/scanline_count = 240.0
+shader_parameter/scanline_movespeed = 0.5
+shader_parameter/horizontal_scanline_strength = 0.4
+shader_parameter/vertical_scanline_strength = 0.02
+shader_parameter/chromatic = 2.0
+shader_parameter/ghosting = 0.05
+shader_parameter/vignette = 0.05
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+shader_parameter/bloomRadius = 1.0
+shader_parameter/bloomThreshold = 1.0
+shader_parameter/bloomIntensity = 1.0
 
 [node name="MainScene" type="Node2D" unique_id=572746955]
 script = ExtResource("1_w2twt")
@@ -19,6 +39,15 @@ battle_scene = ExtResource("3_pu3yx")
 environment = SubResource("Environment_und3l")
 
 [node name="ScreenCanvas" type="CanvasLayer" parent="." unique_id=464352026]
+
+[node name="crt" type="ColorRect" parent="ScreenCanvas" unique_id=1613429258]
+material = SubResource("ShaderMaterial_c1pb6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="GameRoot" type="Node2D" parent="." unique_id=2082048209]
 unique_name_in_owner = true
