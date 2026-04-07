@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://cu1rhw2mrto51"]
+
+[ext_resource type="Script" uid="uid://dqpyxjnamsga6" path="res://scenes/main_scene.gd" id="1_w2twt"]
+[ext_resource type="PackedScene" uid="uid://cdhmypurlnbyw" path="res://scenes/title_screen.tscn" id="2_pw63i"]
+[ext_resource type="Script" uid="uid://bb0632ib7j5et" path="res://scenes/popup_manager.gd" id="3_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://b8h3g437j73fb" path="res://scenes/battle_scene.tscn" id="3_pu3yx"]
+[ext_resource type="Script" uid="uid://da6d78s8867ns" path="res://scenes/dialog_manager.gd" id="4_gubc5"]
+[ext_resource type="Resource" uid="uid://vq2l5fag5wbd" path="res://resources/dialog/1.tres" id="5_c16ls"]
+[ext_resource type="PackedScene" uid="uid://b0uptuihe2xlr" path="res://scenes/ui/dialog/dialog_options.tscn" id="5_rt2n2"]
+
+[sub_resource type="Environment" id="Environment_und3l"]
+
+[node name="MainScene" type="Node2D" unique_id=572746955]
+script = ExtResource("1_w2twt")
+title_screen = ExtResource("2_pw63i")
+battle_scene = ExtResource("3_pu3yx")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=428904905]
+environment = SubResource("Environment_und3l")
+
+[node name="ScreenCanvas" type="CanvasLayer" parent="." unique_id=464352026]
+
+[node name="GameRoot" type="Node2D" parent="." unique_id=2082048209]
+unique_name_in_owner = true
+
+[node name="DialogCanvas" type="CanvasLayer" parent="." unique_id=1444873544]
+
+[node name="DialogManager" type="Control" parent="DialogCanvas" unique_id=1567374170]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_gubc5")
+test_dialogue = ExtResource("5_c16ls")
+
+[node name="DarkenDiaBg" type="ColorRect" parent="DialogCanvas/DialogManager" unique_id=272700129]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -142.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.16078432, 0.16078432, 0.16078432, 0.4509804)
+
+[node name="OptionsGroup" type="Control" parent="DialogCanvas/DialogManager" unique_id=1182371217]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DialogOptions" parent="DialogCanvas/DialogManager/OptionsGroup" unique_id=1437505202 instance=ExtResource("5_rt2n2")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = 61.0
+offset_right = 22.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+btn_text = "Hello"
+index = 0
+
+[node name="DialogOptions2" parent="DialogCanvas/DialogManager/OptionsGroup" unique_id=1109680902 instance=ExtResource("5_rt2n2")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = 85.0
+offset_right = 22.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+btn_text = "Hello"
+index = 1
+
+[node name="DialogOptions3" parent="DialogCanvas/DialogManager/OptionsGroup" unique_id=1294880649 instance=ExtResource("5_rt2n2")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = 107.0
+offset_right = 22.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+btn_text = "Hello"
+index = 2
+
+[node name="TextDiaBox" type="RichTextLabel" parent="DialogCanvas/DialogManager" unique_id=19384125]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 634.0
+offset_bottom = 219.0
+bbcode_enabled = true
+text = "Hello"
+
+[node name="PopupCanvas" type="CanvasLayer" parent="." unique_id=774195293]
+
+[node name="PopupManager" type="Control" parent="PopupCanvas" unique_id=759264272]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_7ykc4")
+
+[node name="DarkenScreen" type="ColorRect" parent="PopupCanvas/PopupManager" unique_id=861340247]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3882353)

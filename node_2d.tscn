@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cb2gpgegky0eo"]
+
+[ext_resource type="PackedScene" uid="uid://brvw0w7l83rdr" path="res://scenes/characters/hero/hero.tscn" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://codqyui3eusd0" path="res://scripts/system/MyCamera.gd" id="2_epypp"]
+
+[node name="Node2D" type="Node2D" unique_id=41891438]
+
+[node name="Hero" parent="." unique_id=381240565 instance=ExtResource("1_0e48y")]
+
+[node name="MyCamera" type="Camera2D" parent="." unique_id=1000133715 node_paths=PackedStringArray("follow_node")]
+position_smoothing_enabled = true
+script = ExtResource("2_epypp")
+follow_node = NodePath("../Hero")
+k = 0.4
+metadata/_custom_type_script = "uid://codqyui3eusd0"

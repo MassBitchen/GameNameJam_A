@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dasibl7yj6o4d"]
+
+[ext_resource type="Script" uid="uid://dd8uxtopd8ma5" path="res://scenes/characters/boss/boss_left_hand.gd" id="1_1k5u2"]
+[ext_resource type="Texture2D" uid="uid://dkx7e3ixk7avt" path="res://assets/characters/Boss Base Placeholder ( Heart + Left Hand + Right Hand ).png" id="1_c25rp"]
+[ext_resource type="Script" uid="uid://cvpuqen0x0v7n" path="res://scripts/system/state_machine.gd" id="2_8kd5v"]
+
+[node name="BossLeftHand" type="CharacterBody2D" unique_id=923000003]
+script = ExtResource("1_1k5u2")
+
+[node name="Grahpic" type="Node2D" parent="." unique_id=908558612]
+
+[node name="Body" type="Sprite2D" parent="Grahpic" unique_id=958214247]
+position = Vector2(0, 1)
+texture = ExtResource("1_c25rp")
+region_enabled = true
+region_rect = Rect2(198, 17, 52, 79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=677370959]
+
+[node name="StateMachine" type="Node" parent="." unique_id=1290484193]
+script = ExtResource("2_8kd5v")
+metadata/_custom_type_script = "uid://cvpuqen0x0v7n"
+
+[node name="Timer" type="Node" parent="." unique_id=1936798754]
+
+[node name="Timer1" type="Timer" parent="Timer" unique_id=1911397079]
+unique_name_in_owner = true
+
+[node name="Timer2" type="Timer" parent="Timer" unique_id=576929826]
+unique_name_in_owner = true
+
+[node name="Timer3" type="Timer" parent="Timer" unique_id=1460046048]
+unique_name_in_owner = true

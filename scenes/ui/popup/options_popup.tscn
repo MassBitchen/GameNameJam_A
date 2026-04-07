@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b8woy6hdocs52"]
+
+[ext_resource type="Texture2D" uid="uid://df2ej16dpvp07" path="res://assets/ui/SkillNode.png" id="1_1vbgj"]
+[ext_resource type="Script" uid="uid://bke3jluk42fow" path="res://scenes/ui/popup/options_popup.gd" id="1_ypny2"]
+[ext_resource type="PackedScene" uid="uid://bxuwpya0pwske" path="res://scenes/ui/button/text_button.tscn" id="2_aiecp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aiecp"]
+texture = ExtResource("1_1vbgj")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="OptionsPopup" type="Control" unique_id=554850409]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 174.0
+offset_bottom = 160.0
+script = ExtResource("1_ypny2")
+
+[node name="BG" type="ColorRect" parent="." unique_id=11561070]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=344171391]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_aiecp")
+
+[node name="BackBtn" parent="." unique_id=1437505202 instance=ExtResource("2_aiecp")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 0
+offset_left = -10.0
+offset_top = 142.00002
+offset_right = 27.238663
+offset_bottom = 152.8571
+rotation = 0.26408082
+scale = Vector2(1.5, 1.5)
+btn_text = "BACK"

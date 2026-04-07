@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b0uptuihe2xlr"]
+
+[ext_resource type="Script" uid="uid://jdrfvj54mg7y" path="res://scenes/ui/dialog/dialog_options.gd" id="1_jilok"]
+[ext_resource type="Texture2D" uid="uid://df2ej16dpvp07" path="res://assets/ui/SkillNode.png" id="2_0tcrf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5c846"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oeg0b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8nt0r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fmjog"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d0vt4"]
+texture = ExtResource("2_0tcrf")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[node name="DialogOptions" type="Button" unique_id=1437505202]
+custom_minimum_size = Vector2(8, 8)
+offset_right = 42.0
+offset_bottom = 15.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5c846")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oeg0b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8nt0r")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fmjog")
+script = ExtResource("1_jilok")
+
+[node name="Bg" type="PanelContainer" parent="." unique_id=2146642464]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_d0vt4")
+
+[node name="OptionsText" type="RichTextLabel" parent="." unique_id=747038954]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -7.5
+offset_right = 20.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]HELLO[/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0

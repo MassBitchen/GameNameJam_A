@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cfkrscjc7fapl"]
+
+[ext_resource type="Script" uid="uid://c2bcqm6mnnbr5" path="res://scenes/characters/boss/boss_right_hand.gd" id="1_5p1ad"]
+[ext_resource type="Texture2D" uid="uid://dkx7e3ixk7avt" path="res://assets/characters/Boss Base Placeholder ( Heart + Left Hand + Right Hand ).png" id="1_iakqx"]
+[ext_resource type="Script" uid="uid://cvpuqen0x0v7n" path="res://scripts/system/state_machine.gd" id="3_nprxf"]
+
+[node name="BossRightHand" type="CharacterBody2D" unique_id=923000003]
+script = ExtResource("1_5p1ad")
+
+[node name="Grahpic" type="Node2D" parent="." unique_id=649878867]
+
+[node name="Body" type="Sprite2D" parent="Grahpic" unique_id=1329494691]
+position = Vector2(45, 2)
+texture = ExtResource("1_iakqx")
+region_enabled = true
+region_rect = Rect2(276, 33, 161, 57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=632489826]
+
+[node name="StateMachine" type="Node" parent="." unique_id=1062484578]
+script = ExtResource("3_nprxf")
+metadata/_custom_type_script = "uid://cvpuqen0x0v7n"

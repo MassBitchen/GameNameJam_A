@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="DialogueGroup" format=3 uid="uid://vq2l5fag5wbd"]
+
+[ext_resource type="Script" uid="uid://dd7ve3en27icu" path="res://scripts/system/dialog/dialogue.gd" id="1_17ctj"]
+[ext_resource type="Script" uid="uid://bvm27s02bb4hw" path="res://scripts/system/dialog/dialogue_group.gd" id="2_g50pn"]
+
+[sub_resource type="Resource" id="Resource_17ctj"]
+script = ExtResource("1_17ctj")
+main_text = "1111111111111111"
+options_text = Array[String](["AAAAAAAA", "BBBBBBBBBB", "CCCCCCCCCCC"])
+options_to_index = Array[int]([1, 1, 1])
+metadata/_custom_type_script = "uid://dd7ve3en27icu"
+
+[sub_resource type="Resource" id="Resource_g50pn"]
+script = ExtResource("1_17ctj")
+main_text = "22222222222222"
+options_text = Array[String](["CCCCCCCCCCCCCCC", "DDDDDDDDDDDDDD"])
+options_to_index = Array[int]([-1, -1])
+metadata/_custom_type_script = "uid://dd7ve3en27icu"
+
+[resource]
+script = ExtResource("2_g50pn")
+dialogue_list = Array[ExtResource("1_17ctj")]([SubResource("Resource_17ctj"), SubResource("Resource_g50pn")])
+metadata/_custom_type_script = "uid://bvm27s02bb4hw"

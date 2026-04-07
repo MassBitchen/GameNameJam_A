@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://brvw0w7l83rdr"]
+
+[ext_resource type="Script" uid="uid://cvpuqen0x0v7n" path="res://scripts/system/state_machine.gd" id="1_61yuy"]
+[ext_resource type="Script" uid="uid://cjkx3nibxb26a" path="res://scenes/characters/hero/hero.gd" id="1_jkpr1"]
+[ext_resource type="Texture2D" uid="uid://bfbl5lvr45iqk" path="res://assets/characters/Hero Sprite ( not for animation - only for visual ).png" id="2_dsrnh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dsrnh"]
+radius = 4.1231055
+
+[node name="Hero" type="CharacterBody2D" unique_id=381240565]
+script = ExtResource("1_jkpr1")
+
+[node name="Grahpic" type="Node2D" parent="." unique_id=1527804982]
+
+[node name="Body" type="Sprite2D" parent="Grahpic" unique_id=1483791682]
+position = Vector2(0, -16)
+texture = ExtResource("2_dsrnh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Grahpic" unique_id=1961063687]
+root_node = NodePath("../..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2137009847]
+shape = SubResource("CircleShape2D_dsrnh")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1918182025]
+script = ExtResource("1_61yuy")
+metadata/_custom_type_script = "uid://cvpuqen0x0v7n"

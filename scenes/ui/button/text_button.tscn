@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bxuwpya0pwske"]
+
+[ext_resource type="PackedScene" uid="uid://dwchkqlseguwq" path="res://scenes/ui/button/my_button.tscn" id="1_p3gi4"]
+[ext_resource type="Script" uid="uid://cq12r8t33j5db" path="res://scenes/ui/button/text_button.gd" id="2_b3hks"]
+
+[node name="TextButton" unique_id=1437505202 instance=ExtResource("1_p3gi4")]
+script = ExtResource("2_b3hks")
+btn_text = ""
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Visuals" parent_id_path=PackedInt32Array(1353424825) index="0" unique_id=1227968542]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center][/center]"
+fit_content = true
+scroll_active = false

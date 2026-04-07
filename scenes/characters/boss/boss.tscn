@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dt02jyxvb1p4h"]
+
+[ext_resource type="Texture2D" uid="uid://dkx7e3ixk7avt" path="res://assets/characters/Boss Base Placeholder ( Heart + Left Hand + Right Hand ).png" id="1_h1xi1"]
+[ext_resource type="PackedScene" uid="uid://dasibl7yj6o4d" path="res://scenes/characters/boss/boss_left_hand.tscn" id="1_kp4i8"]
+[ext_resource type="Script" uid="uid://csvn4ix77a015" path="res://scenes/characters/boss/boss.gd" id="1_rbs2p"]
+[ext_resource type="PackedScene" uid="uid://cfkrscjc7fapl" path="res://scenes/characters/boss/boss_right_hand.tscn" id="2_h1xi1"]
+[ext_resource type="Script" uid="uid://cvpuqen0x0v7n" path="res://scripts/system/state_machine.gd" id="5_bcw0o"]
+[ext_resource type="Script" uid="uid://cqhkif5ab4llu" path="res://scripts/system/data/health_component.gd" id="6_ce6vb"]
+
+[node name="Boss" type="CharacterBody2D" unique_id=1425210822]
+script = ExtResource("1_rbs2p")
+
+[node name="Grahpic" type="Node2D" parent="." unique_id=1283755241]
+
+[node name="Body" type="Sprite2D" parent="Grahpic" unique_id=1214319724]
+position = Vector2(0, 1)
+texture = ExtResource("1_h1xi1")
+region_enabled = true
+region_rect = Rect2(23, 6, 161, 154)
+
+[node name="Hands" type="Node2D" parent="." unique_id=238271953]
+
+[node name="BossLeftHand" parent="Hands" unique_id=923000003 instance=ExtResource("1_kp4i8")]
+position = Vector2(-127, 104)
+
+[node name="BossRightHand" parent="Hands" unique_id=72999267 instance=ExtResource("2_h1xi1")]
+position = Vector2(100, 112)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1218317776]
+
+[node name="StateMachine" type="Node" parent="." unique_id=669238592]
+script = ExtResource("5_bcw0o")
+metadata/_custom_type_script = "uid://cvpuqen0x0v7n"
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1030732312]
+script = ExtResource("6_ce6vb")
+metadata/_custom_type_script = "uid://cqhkif5ab4llu"
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=817684897]
